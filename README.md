@@ -2,9 +2,28 @@
 
 `hscrpt` is a sugar-free version of [hyperscript](https://github.com/dominictarr/hyperscript')
 
-sometimes you need to create a very basic UI,
-but also want an absolutely minimal code size.
+It's not a framework, it's just a tool for convienently creating html
+elements directly in javascript.
 
+``` js
+//reactive hello world
+var h = require('hscrpt')
+var name
+document.body.appendChild(h('div',
+  h('h1', 'Hello, ', name = h('span', 'World')),
+  h('input', {oninput: function (ev) {
+    name.textContent = ev.target.value
+  })
+))
+```
+
+frameworks come and go. but the DOM doesn't change,
+because that would _break all the frameworks_.
+
+You could do this with `hyperscript`, this just removes all the sugar
+from hyperscript and gives you something absolutely minimal.
+
+infact:
 ``` js
 module.exports = function h (tag, attrs, content) {
   if(Array.isArray(attrs)) content = attrs, attrs = {}
@@ -36,6 +55,10 @@ use `h('button', {onclick: function (ev) {...}}, ['submit'])`
 ## License
 
 MIT
+
+
+
+
 
 
 
