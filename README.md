@@ -1,6 +1,6 @@
 # hscrpt
 
-`hscrpt` is a sugar-free version of [hyperscript](https://github.com/dominictarr/hyperscript')
+`hscrpt` is a sugar-free version of [hyperscript](https://github.com/dominictarr/hyperscript)
 
 It's not a framework, it's just a tool for convienently creating html
 elements directly in javascript.
