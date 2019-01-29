@@ -9,12 +9,12 @@ elements directly in javascript.
 //reactive hello world
 var h = require('hscrpt')
 var name
-document.body.appendChild(h('div',
-  h('h1', 'Hello, ', name = h('span', 'World')),
+document.body.appendChild(h('div', [
+  h('h1', [ 'Hello, ', name = h('span', 'World') ]),
   h('input', {oninput: function (ev) {
     name.textContent = ev.target.value
-  })
-))
+  }})
+]))
 ```
 
 frameworks come and go. but the DOM doesn't change,
